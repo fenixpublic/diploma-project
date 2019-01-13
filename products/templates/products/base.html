@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            {% block page_title %}
+                Page Title
+            {% endblock %}
+        </title>
+    </head>
+    <body>
+        {% if request.user.is_authenticated %}
+            <p>Hello, {{ user.username }}</p>
+            <a href="{% url 'products:logout' %}">Logout</a>
+        {% else %}
+            <p>Hello, guest!</p>
+            <a href="{% url 'products:login' %}">Login</a>
+        {% endif %}
+
+        {% block content_title %}
+            Title
+        {% endblock %}
+
+        {% block content %}
+            Content
+        {% endblock %}
+    </body>
+</html>

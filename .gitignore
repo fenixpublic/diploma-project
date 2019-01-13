@@ -1,3 +1,6 @@
 *.pyc
 __pycache__/
 .vscode/
+Venv/
+media/
+db.sqlite3
